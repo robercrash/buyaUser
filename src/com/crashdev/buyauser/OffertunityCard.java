@@ -1,9 +1,11 @@
 package com.crashdev.buyauser;
 
+import java.io.Serializable;
+
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 
-public class OffertunityCard {
+public class OffertunityCard implements Serializable{
 
 	private String advertiserName;
 	private String offertTitle;
@@ -11,7 +13,16 @@ public class OffertunityCard {
 	private String vigencia;
 	private String condiciones;
 	private int mainImageID;
+	private String id;
 	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	public OffertunityCard(){
 		advertiserName = "";
 		offertTitle = "";
