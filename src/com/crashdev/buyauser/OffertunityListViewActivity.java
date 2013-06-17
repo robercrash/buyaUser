@@ -104,7 +104,7 @@ public class OffertunityListViewActivity extends SherlockActivity {
 		if(item.getItemId() == R.id.favoritos){
 			startActivity(new Intent(getApplicationContext(), OffertunitiesMapViewActivity.class));
 		}else if(item.getItemId() == R.id.configuracion){
-			startActivity(new Intent(getApplicationContext(), OffertunitiesMapViewActivity.class));
+			startActivity(new Intent(getApplicationContext(), OffertunitieDetailActivity.class));
 		}
 		return super.onOptionsItemSelected(item);
 	}
