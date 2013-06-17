@@ -21,8 +21,7 @@
         android:id="@+id/promo_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/descuentos" />
+        android:scaleType="fitXY" />
 
     <TextView
         android:id="@+id/titulo"
@@ -42,7 +41,7 @@
         android:textColor="@color/color_texto" />
 
     <TextView
-        android:id="@+id/vigencia"
+        android:id="@+id/advertiser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Medium Text"
@@ -61,7 +60,7 @@
     <Button
         android:id="@+id/publica"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="40dp"
         android:background="@color/bluberry_blue"
         android:text="Enviar" />
 </LinearLayout>

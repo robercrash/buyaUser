@@ -15,15 +15,33 @@ import com.google.zxing.client.android.Contents;
 
 public class OffertunitieDetailActivity extends SherlockActivity {
 	
-	TextView titulo, descripcion;
+	TextView titulo, descripcion, advertiser;
 	ImageView iv;
 	String codeQR="SHIT";
+	
+	//datos de offertunity
+	//String advertiser,description,title;
+	OffertunityCard oferta = new OffertunityCard();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		setTheme(R.style.Theme_Sherlock_Light);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_offertunitie_detail);
+		
+		titulo = (TextView) findViewById(R.id.titulo);
+		descripcion = (TextView) findViewById(R.id.descripcion);
+		advertiser = (TextView) findViewById(R.id.advertiser);
+		iv = (ImageView) findViewById(R.id.promo_image);
+		
+		oferta = (OffertunityCard) getIntent().getSerializableExtra("oferta");
+		
+		titulo.setText(oferta.getOffertTitle());
+		descripcion.setText(oferta.getOfferDescription());
+		advertiser.setText(oferta.getAdvertiserName());
+		iv.setBackgroundResource(oferta.getMainImageID());
+		codeQR = oferta.getId();
+	
 		
 		
 		/*despliega QR-CODE*/

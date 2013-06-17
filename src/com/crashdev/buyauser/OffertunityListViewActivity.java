@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
@@ -57,6 +58,7 @@ public class OffertunityListViewActivity extends SherlockActivity {
 		
 		OffertunityCard oferta = new OffertunityCard();
 		oferta.setMainImage(R.drawable.example_1);
+		oferta.setId("1");
 		oferta.setOffertTitle("2x1 Toda la semana");
 		oferta.setAdvertiserName("Your company name here");
 		oferta.setOfferDescription("Esta semana por inauguarci�n...");
@@ -64,6 +66,7 @@ public class OffertunityListViewActivity extends SherlockActivity {
 		
 		OffertunityCard oferta2 = new OffertunityCard();
 		oferta2.setMainImage(R.drawable.example_2);
+		oferta2.setId("2");
 		oferta2.setOffertTitle("2x1 Toda la semana");
 		oferta2.setAdvertiserName("Liverpool");
 		oferta2.setOfferDescription("Esta semana por inauguarci�n...");
@@ -71,6 +74,7 @@ public class OffertunityListViewActivity extends SherlockActivity {
 	
 		OffertunityCard oferta3 = new OffertunityCard();
 		oferta3.setMainImage(R.drawable.example_3);
+		oferta3.setId("3");
 		oferta3.setOffertTitle("2x1 Toda la semana");
 		oferta3.setAdvertiserName("Your company name here");
 		oferta3.setOfferDescription("Esta semana por inauguarci�n...");
@@ -78,6 +82,7 @@ public class OffertunityListViewActivity extends SherlockActivity {
 		
 		OffertunityCard oferta4 = new OffertunityCard();
 		oferta4.setMainImage(R.drawable.example_4);
+		oferta4.setId("4");
 		oferta4.setOffertTitle("2x1 Toda la semana");
 		oferta4.setAdvertiserName("Your company name here");
 		oferta4.setOfferDescription("Esta semana por inauguarci�n...");
@@ -85,6 +90,7 @@ public class OffertunityListViewActivity extends SherlockActivity {
 		
 		OffertunityCard oferta5 = new OffertunityCard();
 		oferta5.setMainImage(R.drawable.example_5);
+		oferta5.setId("5");
 		oferta5.setOffertTitle("2x1 Toda la semana");
 		oferta5.setAdvertiserName("Your company name here");
 		oferta5.setOfferDescription("Esta semana por inauguarci�n...");
@@ -92,6 +98,7 @@ public class OffertunityListViewActivity extends SherlockActivity {
 		
 		OffertunityCard oferta6 = new OffertunityCard();
 		oferta6.setMainImage(R.drawable.example_6);
+		oferta6.setId("6");
 		oferta6.setOffertTitle("2x1 Toda la semana");
 		oferta6.setAdvertiserName("Your company name here");
 		oferta6.setOfferDescription("Esta semana por inauguarci�n...");
@@ -107,7 +114,19 @@ public class OffertunityListViewActivity extends SherlockActivity {
 				//Aqui lanzamos el intent con el detailView de la oferta
 				//Toast.makeText(getApplicationContext(), "A webo!!", Toast.LENGTH_SHORT).show();
 				//Intent i = new Intent(getApplicationContext(), SearchOffertunitiesActivity.class);
-				Intent i = new Intent(getApplicationContext(), OffertunitiesMapViewActivity.class);
+				//OffertunityCard offertToShow = new OffertunityCard();
+				//arg0.getAdapter().getClass()
+				OffertunityCard offertToShow= (OffertunityCard) arg0.getAdapter().getItem(arg2);
+				//offertToShow.getId()
+				
+				//Toast.makeText(getApplicationContext(), "--"+offertToShow.getId(), Toast.LENGTH_SHORT).show();
+				
+				Intent i = new Intent(getApplicationContext(), OffertunitieDetailActivity.class);
+				i.putExtra("oferta", offertToShow);
+				/*i.putExtra("id", offertToShow.getId());
+				i.putExtra("title", offertToShow.getOffertTitle());
+				i.putExtra("advertiser", offertToShow.getAdvertiserName());
+				i.putExtra("description", offertToShow.getOfferDescription());*/
 				startActivity(i);
 			}
 			
