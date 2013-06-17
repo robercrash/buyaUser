@@ -6,5 +6,7 @@
     
     <dimen name="offercard_horizontal_margin">8dp</dimen>
     <dimen name="offercard_vertical_margin">8dp</dimen>
+    
+    <dimen name="offer_title_size">25dp</dimen>
 
 </resources>
