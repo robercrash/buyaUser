@@ -1,6 +1,9 @@
 package com.crashdev.buyauser;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import com.crashdev.buyauser.ofertaendpoint.model.Oferta;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,10 +15,11 @@ import android.widget.TextView;
 
 public class OffertunityListviewAdapter extends BaseAdapter {
 	
-	private ArrayList<OffertunityCard> data;
+	//private ArrayList<OffertunityCard> data;
+	private ArrayList<Oferta> data;
     Context context;
     
-    public OffertunityListviewAdapter(ArrayList<OffertunityCard> data, Context context){
+    public OffertunityListviewAdapter(ArrayList<Oferta> data, Context context){
     	this.data = data;
     	this.context = context;
     }
@@ -53,14 +57,15 @@ public class OffertunityListviewAdapter extends BaseAdapter {
 		TextView offerDescription = (TextView) v.findViewById(R.id.offerDescription);
 		
 		
-		OffertunityCard oferta = data.get(position);
+		//OffertunityCard oferta = data.get(position);
+		Oferta oferta = data.get(position);
 		
 		//Aqui hay q insertar los demas datos
-		//mainImage.setImageResource(R.drawable.example_1);
-		mainImage.setImageResource(oferta.getMainImageID());
-		offerTitle.setText(oferta.getOffertTitle());
-		offerer.setText(oferta.getAdvertiserName());
-		offerDescription.setText(oferta.getOfferDescription());
+		mainImage.setImageResource(R.drawable.example_1);
+		//mainImage.setImageResource(oferta.getMainImageID());
+		offerTitle.setText(oferta.getTitulo());
+		offerer.setText(oferta.getAdvertaicer());
+		offerDescription.setText(oferta.getDescripcion());
 		
 		
 		return v;

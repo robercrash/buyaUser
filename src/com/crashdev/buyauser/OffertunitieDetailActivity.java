@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockActivity;
+import com.crashdev.buyauser.ofertaendpoint.model.Oferta;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
 import com.google.zxing.client.android.Contents;
@@ -40,6 +41,7 @@ public class OffertunitieDetailActivity extends SherlockActivity {
 		descripcion.setText(oferta.getOfferDescription());
 		advertiser.setText(oferta.getAdvertiserName());
 		iv.setBackgroundResource(oferta.getMainImageID());
+		
 		codeQR = oferta.getId();
 	
 		
